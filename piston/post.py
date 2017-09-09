@@ -174,11 +174,7 @@ class Post(dict):
             r.append(Post(post, steem_instance=self.steem))
         if sort == "total_payout_value":
             r = sorted(r, key=lambda x: float(
-                x["total_payout_value"]
-            ), reverse=True)
-        elif sort == "total_payout_value":
-            r = sorted(r, key=lambda x: float(
-                x["total_payout_value"]
+                x["total_payout_value"].split()[0]
             ), reverse=True)
         else:
             r = sorted(r, key=lambda x: x[sort])
